@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css">
 
 
     <!-- Google Fonts -->
@@ -17,6 +18,8 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="Styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -37,6 +40,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login_formateur.php">Connexion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="espace_formateur.php">Mon compte Formateur</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Qui sommes-nous ?</a>

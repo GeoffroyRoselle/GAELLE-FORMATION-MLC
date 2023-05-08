@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($mot_de_passe, $row['mot_de_passe'])) {
+            $_SESSION['loggedin'] = true;
             $_SESSION['formateurs_id'] = $row['id'];
             header("Location: espace_formateur.php");
             exit();

@@ -20,12 +20,127 @@ function verifierCheckboxFE() {
         }
     }
 }
+//couleur du cadre IE
+function verifierCheckboxFE() {
+    let FEE = document.getElementById("FEE");
+    let FE0 = document.getElementById("FE0");
+    let FE1 = document.getElementById("FE1");
+    let FE2 = document.getElementById("FE2");
+    let FE3 = document.getElementById("FE3");
+    let divCadre = document.querySelector(".borderFE");
+
+    if (FEE.checked) {
+        divCadre.style.backgroundColor = "red";
+    } else if (FE1.checked || FE2.checked || FE3.checked) {
+        divCadre.style.backgroundColor = "green";
+    } else {
+        divCadre.style.backgroundColor = "";
+    }
+}
+//couleur cadre étape 1-2-3
+let etape1Input = document.getElementById("etape1");
+let etape2Input = document.getElementById("etape2");
+let etape3Input = document.getElementById("etape3");
+
+// Fonction pour mettre à jour le background de la border en fonction des cases cochées
+function mettreAJourBackground() {
+    let etapesDiv = document.getElementById("etapes");
+    if (etape1Input.checked || etape2Input.checked || etape3Input.checked) {
+        etapesDiv.classList.add("bg-light");
+    } else {
+        etapesDiv.classList.remove("bg-light");
+    }
+}
+
+// Ajouter un écouteur d'événement "change" pour chaque case
+etape1Input.addEventListener("change", mettreAJourBackground);
+etape2Input.addEventListener("change", mettreAJourBackground);
+etape3Input.addEventListener("change", mettreAJourBackground);
+// coulour cadre étape 4
+// Récupérer les éléments HTML
+let etapesDiv = document.getElementById("etapecontroles");
+let etape4Input = document.getElementById("etape4");
+
+// Fonction pour mettre à jour le background de la border en fonction des cases cochées
+function mettreAJourBackground() {
+    if (etape4Input.checked) {
+        etapesDiv.classList.add("grey");
+    } else {
+        etapesDiv.classList.remove("grey");
+    }
+}
+
+// Ajouter un événement de changement d'état pour l'étape 4
+etape4Input.addEventListener("change", mettreAJourBackground);
+
 function verifierFreins() {
     const caseCochee = document.getElementById("freinsKO").checked;
     if (caseCochee) {
         alert("Game Over !");
     }
 }
+// Récupération des cases à cocher
+var cases = document.querySelectorAll('#s2 input[type="checkbox"]');
+
+// Ajout d'un écouteur d'événement sur chaque case
+cases.forEach(function (caseACocher) {
+    caseACocher.addEventListener('change', function () {
+        // Récupération de la div s2
+        var s2 = document.querySelector('#s2');
+
+        // Vérification si au moins une des cases est cochée
+        var auMoinsUneCaseEstCochee = false;
+        cases.forEach(function (caseACocher) {
+            if (caseACocher.checked) {
+                auMoinsUneCaseEstCochee = true;
+            }
+        });
+
+        // Ajout ou suppression de la classe "etapes-cochees"
+        if (auMoinsUneCaseEstCochee) {
+            s2.classList.add('etapes-cochees');
+        } else {
+            s2.classList.remove('etapes-cochees');
+        }
+    });
+});
+// background pour les essais de freins
+function verifierFreins() {
+    var freinsKO = document.getElementById("freinsKO");
+    var s3 = document.getElementById("s3");
+    if (freinsKO.checked) {
+        s3.classList.add("bg-red");
+        s3.classList.remove("bg-light-gray");
+    } else if (
+        document.getElementById("etape12").checked ||
+        document.getElementById("etape13").checked ||
+        document.getElementById("etape14").checked ||
+        document.getElementById("etape15").checked
+    ) {
+        s3.classList.add("bg-light-gray");
+        s3.classList.remove("bg-red");
+    } else {
+        s3.classList.remove("bg-light-gray");
+        s3.classList.remove("bg-red");
+    }
+}
+
+document.getElementById("etape12").addEventListener("click", verifierFreins);
+document.getElementById("etape13").addEventListener("click", verifierFreins);
+document.getElementById("etape14").addEventListener("click", verifierFreins);
+document.getElementById("etape15").addEventListener("click", verifierFreins);
+document.getElementById("freinsKO").addEventListener("click", verifierFreins);
+//contre G/P
+function verifierGestesPostures() {
+    var s4 = document.getElementById("s4");
+    var etape16 = document.getElementById("etape16");
+    if (etape16.checked) {
+        s4.classList.add("border-success");
+    } else {
+        s4.classList.remove("border-success");
+    }
+}
+
 
 // Tirage au sort et affichage du thème
 function tirerAuSort() {
@@ -870,9 +985,14 @@ function calculerNote() {
     noteTotaleDiv.textContent = "Note totale : " + note;
     if (note >= 17) {
         noteTotaleDiv.style.color = "green";
+        noteTotaleDiv.style.fontWeight = "bold";
+        noteTotaleDiv.style.fontSize = "24px";
     } else {
         noteTotaleDiv.style.color = "red";
+        noteTotaleDiv.style.fontWeight = "bold";
+        noteTotaleDiv.style.fontSize = "24px";
     }
+
 };
 // initialisation des variables
 let startTime;
