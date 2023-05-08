@@ -38,17 +38,18 @@ function verifierCheckboxFE() {
     }
 }
 //couleur cadre étape 1-2-3
-let etape1Input = document.getElementById("etape1");
-let etape2Input = document.getElementById("etape2");
-let etape3Input = document.getElementById("etape3");
+// récupérer les éléments HTML pertinents
+const etape1Input = document.getElementById("etape1");
+const etape2Input = document.getElementById("etape2");
+const etape3Input = document.getElementById("etape3");
+const etapes1Div = document.getElementById("etapes1");
 
 // Fonction pour mettre à jour le background de la border en fonction des cases cochées
 function mettreAJourBackground() {
-    let etapesDiv = document.getElementById("etapes");
     if (etape1Input.checked || etape2Input.checked || etape3Input.checked) {
-        etapesDiv.classList.add("bg-light");
+        etapes1Div.classList.add("bg-light");
     } else {
-        etapesDiv.classList.remove("bg-light");
+        etapes1Div.classList.remove("bg-light");
     }
 }
 
@@ -56,15 +57,16 @@ function mettreAJourBackground() {
 etape1Input.addEventListener("change", mettreAJourBackground);
 etape2Input.addEventListener("change", mettreAJourBackground);
 etape3Input.addEventListener("change", mettreAJourBackground);
+
 // coulour cadre étape 4
 // Récupérer les éléments HTML
-let etapesDiv = document.getElementById("etapecontroles");
+let etapes4Div = document.getElementById("etapecontroles");
 let etape4Input = document.getElementById("etape4");
 
 // Fonction pour mettre à jour le background de la border en fonction des cases cochées
 function mettreAJourBackground() {
     if (etape4Input.checked) {
-        etapesDiv.classList.add("grey");
+        etapes4Div.classList.add("grey");
     } else {
         etapesDiv.classList.remove("grey");
     }
@@ -1018,11 +1020,13 @@ function updateTimer() {
     const minutes = Math.floor(elapsedTime / 60000);
     const seconds = Math.floor((elapsedTime % 60000) / 1000);
     timer.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+    timerprint.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
     if (elapsedTime >= 300000) {
         stopTimer();
         errorMessage.style.display = "block";
     }
 }
+
 
 // fonction pour arrêter le chronomètre
 function stopTimer() {
@@ -1034,6 +1038,7 @@ function stopTimer() {
 // gestionnaires d'événements pour les boutons de démarrage et d'arrêt
 startButton.addEventListener("click", startTimer);
 stopButton.addEventListener("click", stopTimer);
+//manoeuvre réussi ou non
 const successButton = document.querySelector('.btn-outline-success');
 const failureButton = document.querySelector('.btn-outline-danger');
 const resultMessage = document.getElementById('result-message');
