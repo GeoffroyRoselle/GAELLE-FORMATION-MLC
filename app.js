@@ -1050,6 +1050,7 @@ successButton.addEventListener('click', () => {
 failureButton.addEventListener('click', () => {
     resultMessage.textContent = 'Manoeuvre échouée';
 });
+
 //Nombre de manoeuvre
 const successButtonNM = document.querySelector('.btn-outline-primary');
 const failureButtonNM = document.querySelector('.btn-outline-warning');
@@ -1061,4 +1062,33 @@ successButtonNM.addEventListener('click', () => {
 
 failureButtonNM.addEventListener('click', () => {
     resultMessageNM.textContent = 'En 2 Manoeuvres';
+});
+//Tentative de récupération des données de l'examen et envoi vers la base de données
+$.ajax({
+    url: 'search_eleves_light.php',
+    method: 'POST',
+    data: {
+        nom: 'valeur du nom',
+        prenom: 'valeur du prénom'
+    },
+    success: function (response) {
+        // Traitement des données reçues
+        for (var i = 0; i < response.length; i++) {
+            var eleve = response[i];
+            var nom = eleve.nom;
+            var prenom = eleve.prenom;
+
+            // Afficher les données dans la console
+            console.log("Nom : " + nom + ", Prénom : " + prenom);
+
+            // Construire la requête MySQL supplémentaire avec les données reçues
+            var requeteMySQL = "INSERT INTO VotreTable (nom, prenom) VALUES ('" + nom + "', '" + prenom + "')";
+
+            // Envoyer la requête MySQL supplémentaire (vous pouvez utiliser AJAX à nouveau)
+            // ...
+        }
+    },
+    error: function (xhr, status, error) {
+        // Gérer les erreurs
+    }
 });

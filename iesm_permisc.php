@@ -91,7 +91,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         </div>
 
 
-        <form id="evaluation-form"></form>
+        <form id="evaluation-form">
         <div class="border p-3 rounded-3">
             <button type="button" class="btn btn-primary d-print-none" onclick="calculerNote()">Calcul de la note</button>
             <button class="btn btn-dark  d-print-none" onclick="window.print()">Imprimer le résultat</button>
@@ -99,14 +99,17 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             <div class="text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3 p-3 mb-3">
                 <div class="note-totale mb-3">Résultat du candidat : <span id="note-totale-valeur"></span>/21</div>
                 <div>
+                    <div>
                     <p class="resultatMP" id="result-message"></p>
                     <p class="resultatMP" id="result-messageNM"></p>
+                    </div>
                     <p class="d-none d-print-block"> réalisée en </p>
                     <p class="d-none d-print-block" id="timerprint" style="font-size: 3rem; font-weight: bold; margin: 0;">00:00</p>
                     
                 </div>
             </div>
         </div>
+        </form>
 
     </div>
     </div>

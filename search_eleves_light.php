@@ -16,11 +16,25 @@ if ($result->num_rows > 0) {
     echo "<ul>";
     while ($row = $result->fetch_assoc()) {
         echo "<li>" . $row['nom'] . " " . $row['prenom'] . "</li>";
+        
+        // Envoi des données en tant que réponse JSON vers la page JavaScript
+        $eleve = array(
+            'nom' => $row['nom'],
+            'prenom' => $row['prenom']
+        );
+        $eleves[] = $eleve;
     }
     echo "</ul>";
+
+    // Convertir le tableau en format JSON
+    $eleves_json = json_encode($eleves);
+
+    // Stocker les données JSON dans une variable JavaScript
+    echo "<script>var eleves = $eleves_json;</script>";
 } else {
     echo "Aucun élève trouvé.";
 }
+
 
 $stmt->close();
 $conn->close();
