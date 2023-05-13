@@ -1,5 +1,5 @@
 <?php
-$servername = "sql989.main-hosting.eu";
+$servername = "89.117.169.204";
 $username = "u825852800_MLC";
 $password = "Gaelleformation64";
 $dbname = "u825852800_GAELLE";

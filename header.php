@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="inscription_formateur.php">Inscription</a>
+                            <a class="nav-link" href="Inscription-formateur.php">Inscription</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login_formateur.php">Connexion</a>
