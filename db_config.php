@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost:3307";
-$username = "root";
-$password = "";
-$dbname = "dbs10855648";
+$servername = "sql989.main-hosting.eu";
+$username = "u825852800_MLC";
+$password = "Gaelleformation64";
+$dbname = "u825852800_GAELLE";
 
 // Créez une connexion à la base de données
 $conn = new mysqli($servername, $username, $password, $dbname);

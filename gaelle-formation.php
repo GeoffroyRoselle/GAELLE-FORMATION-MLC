@@ -18,7 +18,7 @@
                 <p>Ne manquez pas l'opportunité de transformer votre centre de formation grâce à GAELLE-FORMATION.
                     Rejoignez-nous dès aujourd'hui et découvrez comment notre solution peut améliorer les
                     performances de vos élèves et simplifier la gestion de votre centre.</p>
-                <a href="inscription%20formateur.php" class="btn btn-primary">Inscrivez-vous dès maintenant</a>
+                <a href="inscription_formateur.php" class="btn btn-primary">Inscrivez-vous dès maintenant</a>
             </div>
             <div class="col-md-6">
                 <img src="Logo GAELLE FORMATION.png" alt="GAELLE-FORMATION Illustration" class="img-fluid">

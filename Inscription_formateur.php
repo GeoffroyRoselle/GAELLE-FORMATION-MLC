@@ -9,7 +9,7 @@
     <div class="container">
 
         <form class="registration-form" action="process_formateur_registration.php" method="post">
-        <h1>Inscription Formateur</h1>
+            <h1>Inscription Formateur</h1>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="sexe">Sexe :</label>
