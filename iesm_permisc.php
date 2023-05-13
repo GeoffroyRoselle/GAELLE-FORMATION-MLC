@@ -99,9 +99,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             <div class="text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3 p-3 mb-3">
                 <div class="note-totale mb-3">Résultat du candidat : <span id="note-totale-valeur"></span>/21</div>
                 <div>
-                    <p id="result-message"></p>
+                    <p class="resultatMP" id="result-message"></p>
+                    <p class="resultatMP" id="result-messageNM"></p>
                     <p class="d-none d-print-block"> réalisée en </p>
                     <p class="d-none d-print-block" id="timerprint" style="font-size: 3rem; font-weight: bold; margin: 0;">00:00</p>
+                    
                 </div>
             </div>
         </div>
@@ -109,7 +111,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     </div>
     </div>
 
-    <div class="border p-3 rounded-3 mx-auto w-50 borderFE">
+    <div class="border p-3 rounded-3 mx-auto  borderFE">
         <h3 class="text-center">Score interrogation écrite</h3>
         <div class="d-flex justify-content-center">
             <div class="form-check form-check-inline">
@@ -139,7 +141,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
     <h2 class="mb-4 text-center animate__animated animate__fadeIn">Début Socle 1</h2>
 
-    <div class="border p-3 rounded-3 mx-auto w-50 borderC1" id="etapes1">
+    <div class="border p-3 rounded-3 mx-auto w-90 borderC1" id="etapes1">
         <div class="mb-3">
             <h3>1.Contrôle de l'immobilisation</h3>
             <div class="form-check form-switch">
@@ -166,7 +168,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div>
         </div>
     </div>
-    <div class="border p-3 rounded-3 mx-auto w-50 borderC2" id="etapecontroles">
+    <div class="border p-3 rounded-3 mx-auto w-90 borderC2" id="etapecontroles">
         <h3>4.contrôles</h3>
         <div>
             <div class="mb-3">
@@ -242,7 +244,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div>
         </div>
     </div>
-    <div class="border p-3 rounded-3 mx-auto w-50 borderC2 page-break" id="etapetheme">
+    <div class="border p-3 rounded-3 mx-auto w-90 borderC2 page-break" id="etapetheme">
         <h3>5. Thème tiré au sort</h3>
         <div class="container">
             <div class="row">
@@ -295,7 +297,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             Notation 0 : le candidat ignore le thème (réponse pratiquement inexistante ou totalement
             erronée).<br></p>
     </div>
-    <div class="border p-3 rounded-3 mx-auto w-50 borderC3" id="etapefo">
+    <div class="border p-3 rounded-3 mx-auto w-90 borderC3" id="etapefo">
         <h3 class="text-center">6. Interrogation orale</h3>
         <div class="container">
             <div class="row d-print-none">
@@ -335,7 +337,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     </div>
 
     <h2 class="mb-4 text-center animate__animated animate__fadeIn">Début Socle 2</h2>
-    <div class="border p-3 rounded-3 mx-auto w-50 borderC3" id="s2">
+    <div class="border p-3 rounded-3 mx-auto w-90 borderC3" id="s2">
         <h3>7. Mise en marche du moteur</h3>
         <p class="NI d-print-none">Le candidat met le moteur en marche.<br> Il annonce les voyants restés allumés et signale
             immédiatement
@@ -344,19 +346,19 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <div class="mb-3">
             <div class="form-check form-switch">
                 <input class="form-check-input form-switch" type="checkbox" role="switch" name="etape10" value="1" id="etape10">
-                <label class="form-check-label NI" for="etape10">Annonce des anomalies
+                <label class="form-check-label NI" for="etape10">Annonce des voyants et des anomalies
                 </label>
             </div>
         </div>
         <div class="mb-3">
             <div class="form-check form-switch">
                 <input class="form-check-input form-switch" type="checkbox" role="switch" name="etape11" value="1" id="etape11">
-                <label class="form-check-label NI" for="etape11">Annonce des voyants
+                <label class="form-check-label NI" for="etape11">Installation au poste de conduite
                 </label>
             </div>
         </div>
     </div>
-    <div class="border p-3 rounded-3 mx-auto w-50 borderC3" id="s3">
+    <div class="border p-3 rounded-3 mx-auto w-90 borderC3" id="s3">
         <h3>8. Vérification des systèmes de freinage</h3>
         <p class="NI d-print-none">1- Mise en pression à l&#039intérieur des réservoirs d&#039air : le candidat s&#039assure que la
             pression
@@ -404,7 +406,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         </div>
     </div>
     </div>
-    <div class="border p-3 rounded-3 mx-auto w-50 borderC3" id="s4">
+    <div class="border p-3 rounded-3 mx-auto w-90 borderC3" id="s4">
         <div class="mb-3">
             <div class="form-check form-switch">
                 <input class="form-check-input form-switch" type="checkbox" role="switch" name="etape16" value="1" id="etape16">
@@ -421,7 +423,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     </form>
     <div class="d-print-none">
         <h2 class="text-center d-print-none ">Manoeuvre</h2>
-        <div class=" d-print-nonecard border p-3 rounded-3 mx-auto w-50 borderC3" style="width: 18rem; border: 1px solid #ccc; border-radius: 5px; background-color: #f2f2f2;">
+        <div class=" d-print-nonecard border p-3 rounded-3 mx-auto w-90 borderC3" style="width: 18rem; border: 1px solid #ccc; border-radius: 5px; background-color: #f2f2f2;">
             <div class="   d-print-none card-body">
                 <h5 class=" d-print-none card-title text-center">Durée Manoeuvre </h5>
                 <div class="d-print-none" style="display: flex; align-items: center; justify-content: center;">
@@ -434,11 +436,18 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 <p id="error-message" style="display:none; color:red; margin-top: 10px;">Limite de temps atteinte !</p>
             </div>
         </div>
-        <div class="container border p-3 rounded-3 mx-auto w-50 borderC3">
+        <div class="container border p-3 rounded-3 mx-auto w-90 borderC3">
             <h2 class=" d-print-none text-center">Résultat Manoeuvre :</h2>
-            <div class="btn-group mx-auto w-50 rounded-3 p-3 text-center" role="group" aria-label="Basic example">
+            <div class="btn-group mx-auto w-90 rounded-3 p-3 text-center" role="group" aria-label="Basic example">
                 <button type="button" class=" d-print-none btn btn-outline-success">Réussite</button>
                 <button type="button" class=" d-print-none btn btn-outline-danger">Échec</button>
+            </div>
+        </div>
+        <div class="container border p-3 rounded-3 mx-auto w-90 borderC3">
+            <h2 class=" d-print-none text-center">Nombre de Manoeuvres</h2>
+            <div class="btn-group mx-auto w-90 rounded-3 p-3 text-center" role="group" aria-label="Basic example">
+                <button type="button" class=" d-print-none btn btn-outline-primary">1</button>
+                <button type="button" class=" d-print-none btn btn-outline-warning">2</button>
             </div>
         </div>
     </div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
@@ -447,9 +456,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     </div>
     <a href="#resultat" type="button" class=" d-print-none text-center bi bi-arrow-up btn btn-info"> en haut de la page</a>
     <div class="input-group">
-        <span class="input-group-text">votre commentaire sur cette évaluation</span>
+        <span class="input-group-text mb-2">Votre commentaire sur cette évaluation</span>
+    </div>
+    <div class="input-group">
         <textarea class="form-control" aria-label="With textarea"></textarea>
     </div>
+
     <script src="app.js"></script>
 </main>
 <script>

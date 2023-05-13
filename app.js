@@ -1050,3 +1050,15 @@ successButton.addEventListener('click', () => {
 failureButton.addEventListener('click', () => {
     resultMessage.textContent = 'Manoeuvre échouée';
 });
+//Nombre de manoeuvre
+const successButtonNM = document.querySelector('.btn-outline-primary');
+const failureButtonNM = document.querySelector('.btn-outline-warning');
+const resultMessageNM = document.getElementById('result-messageNM');
+
+successButtonNM.addEventListener('click', () => {
+    resultMessageNM.textContent = 'En 1 Manoeuvre';
+});
+
+failureButtonNM.addEventListener('click', () => {
+    resultMessageNM.textContent = 'En 2 Manoeuvres';
+});
